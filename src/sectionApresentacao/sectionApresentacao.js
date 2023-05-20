@@ -14,6 +14,7 @@ function DivDpsFumaca() {
   const [widthDiv, setWidth] = useState('10vw');
   const [heightDiv, setHeight] = useState('10vh');
   const [leftDiv, setLeft] = useState('45vw')
+
   const [valDiv, setVal] = useState(10)
   const [percentY, setPercentY] = useState(0)
 
@@ -24,9 +25,11 @@ function DivDpsFumaca() {
       setVal((valDiv) => {console.log("val div ->" + valDiv);return valDiv + 1})
       setPercentY((percentY) => {console.log("perc"+percentY);return window.scrollY/window.innerHeight})
 
-      setWidth((widthDiv) => {console.log(widthDiv);return percentY*10 + "vw"});
+      setWidth((widthDiv) => {console.log("width -> "+widthDiv);return percentY*100 + "vw"});
+      setHeight((HeightDiv) => {console.log("height -> " +HeightDiv);return percentY*100 + "vh"});
+      setLeft((leftDiv) => {console.log("left-> " + leftDiv);return (100-percentY*100)/2 + "vw"});
 
-    }, 10);
+    }, 2);
 
   });
   
