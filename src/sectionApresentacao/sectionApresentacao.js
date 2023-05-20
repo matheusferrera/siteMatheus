@@ -45,35 +45,15 @@ function DivDpsFumaca() {
 
   // window.addEventListener('scroll', onScroll);
 
-  // function onScroll() {
-  //   const scrollY = window.scrollY;
-  //   const percentY = window.scrollY/window.innerHeight
-  //   console.log(percentY)
-
-  //   var count = 10;
-
-  //   if(percentY<6){
-  //     count =+ percentY*100;
-
-  //     if(count < 10)
-  //     count =10
-
-  //     setWidth((widthDiv) => {return 2*count + "vw"});
-  //     setHeight((heightDiv) => {return 2*count + "vw"});
-  //     setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
-  //   }
-
-  // }
-
-  window.addEventListener('scroll', () => {
-
-    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)  
-    console.log(scrollPercentage)
+  window.onscroll = function onScroll() {
+    const scrollY = window.scrollY;
+    const percentY = window.scrollY/window.innerHeight
+    console.log(percentY)
 
     var count = 10;
 
-    if(scrollPercentage<6){
-      count =+ scrollPercentage*100;
+    if(percentY<6){
+      count =+ percentY*100;
 
       if(count < 10)
       count =10
@@ -82,8 +62,29 @@ function DivDpsFumaca() {
       setHeight((heightDiv) => {return 2*count + "vw"});
       setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
     }
+
+  }
+
+  // window.addEventListener('scroll', () => {
+
+  //   var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight)  
+  //   console.log(scrollPercentage)
+
+  //   var count = 10;
+
+  //   if(scrollPercentage<6){
+  //     count =+ scrollPercentage*100;
+
+  //     if(count < 10)
+  //     count =10
+
+  //     setWidth((widthDiv) => {return 2*count + "vw"});
+  //     setHeight((heightDiv) => {return 2*count + "vw"});
+  //     setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
+  //   }
     
-  })
+  // })
+
 
 return(
   <DpsFumacaStyled>
