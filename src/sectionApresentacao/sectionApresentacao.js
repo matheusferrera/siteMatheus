@@ -48,6 +48,7 @@ function DivDpsFumaca() {
   document.addEventListener("scroll", Scroll, false);
 
   function ScrollStart() {
+    console.log("comecou scroll")
     Scroll()
 }
 
