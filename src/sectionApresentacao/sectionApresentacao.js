@@ -70,25 +70,25 @@ function Scroll() {
   }
 }
 
-  window.onscroll = function onScroll() {
-    const scrollY = window.scrollY;
-    const percentY = window.scrollY/window.innerHeight
-    console.log(percentY)
+  // window.onscroll = function onScroll() {
+  //   const scrollY = window.scrollY;
+  //   const percentY = window.scrollY/window.innerHeight
+  //   console.log(percentY)
 
-    var count = 10;
+  //   var count = 10;
 
-    if(percentY<6){
-      count =+ percentY*100;
+  //   if(percentY<6){
+  //     count =+ percentY*100;
 
-      if(count < 10)
-      count =10
+  //     if(count < 10)
+  //     count =10
 
-      setWidth((widthDiv) => {return 2*count + "vw"});
-      setHeight((heightDiv) => {return 2*count + "vw"});
-      setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
-    }
+  //     setWidth((widthDiv) => {return 2*count + "vw"});
+  //     setHeight((heightDiv) => {return 2*count + "vw"});
+  //     setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
+  //   }
 
-  }
+  // }
 
   // window.addEventListener('scroll', () => {
 
