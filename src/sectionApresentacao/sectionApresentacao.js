@@ -3,8 +3,6 @@ import './sectionApresentacao.css';
 
 import BackgroundApresentacao from '../images/backgroundApresentacao.js'
 
-import { Controller, Scene} from 'react-scrollmagic';
-import { Timeline, Tween } from 'react-gsap';
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 
