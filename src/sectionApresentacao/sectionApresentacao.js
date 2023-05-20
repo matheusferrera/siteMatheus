@@ -14,8 +14,22 @@ function DivDpsFumaca() {
   const [widthDiv, setWidth] = useState('10vw');
   const [heightDiv, setHeight] = useState('10vh');
   const [leftDiv, setLeft] = useState('45vw')
-  
+  const [valDiv, setVal] = useState(10)
+  const [percentY, setPercentY] = useState(0)
 
+  useEffect(() => {
+    
+    setTimeout(() => {
+
+      setVal((valDiv) => {console.log("val div ->" + valDiv);return valDiv + 1})
+      setPercentY((percentY) => {console.log("perc"+percentY);return window.scrollY/window.innerHeight})
+
+      setWidth((widthDiv) => {console.log(widthDiv);return percentY*10 + "vw"});
+
+    }, 10);
+
+  });
+  
   const DpsFumacaStyled = styled.div`
   
   /* 
@@ -45,31 +59,31 @@ function DivDpsFumaca() {
 
   
   // document.addEventListener("touchmove", ScrollStart, false);
-  document.addEventListener("scroll", Scroll, false);
+  // document.addEventListener("scroll", Scroll, false);
 
 //   function ScrollStart() {
 //     console.log("comecou scroll")
 //     Scroll()
 // }
 
-function Scroll() {
-  const scrollY = window.scrollY;
-  const percentY = window.scrollY/window.innerHeight
-  console.log(percentY)
+// function Scroll() {
+//   const scrollY = window.scrollY;
+//   const percentY = window.scrollY/window.innerHeight
+//   console.log(percentY)
 
-  var count = 10;
+//   var count = 10;
 
-  if(percentY<6){
-    count =+ percentY*100;
+//   if(percentY<6){
+//     count =+ percentY*100;
 
-    if(count < 10)
-    count =10
+//     if(count < 10)
+//     count =10
 
-    setWidth((widthDiv) => {return 2*count + "vw"});
-    setHeight((heightDiv) => {return 2*count + "vw"});
-    setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
-  }
-}
+//     setWidth((widthDiv) => {return 2*count + "vw"});
+//     setHeight((heightDiv) => {return 2*count + "vw"});
+//     setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
+//   }
+// }
 
   // window.onscroll = function onScroll() {
   //   const scrollY = window.scrollY;
