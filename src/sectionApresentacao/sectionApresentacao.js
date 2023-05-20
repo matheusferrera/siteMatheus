@@ -11,6 +11,8 @@ import { useState, useEffect } from "react";
 
 function DivDpsFumaca() {
   
+
+
   const [widthDiv, setWidth] = useState('10vw');
   const [heightDiv, setHeight] = useState('10vh');
   const [leftDiv, setLeft] = useState('45vw')
@@ -29,7 +31,7 @@ function DivDpsFumaca() {
       setHeight((HeightDiv) => {console.log("height -> " +HeightDiv);return percentY*100 + "vh"});
       setLeft((leftDiv) => {console.log("left-> " + leftDiv);return (100-percentY*100)/2 + "vw"});
 
-    }, 2);
+    }, 1);
 
   });
   
@@ -141,7 +143,7 @@ return(
       </svg>  
 
       <div className='div-titulo-apresentacao' >
-      <p>123456789 123456789 123456789 123456789* 56789 123456789 123456789 123456789* 56789 123456789 123456789 123456789* 56789 123456789 123456789 123456789*/</p>
+      <p>123456789 ${widthDiv}</p>
       <p>FERREIRA2</p>
       </div>
     </div>
