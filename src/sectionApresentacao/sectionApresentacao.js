@@ -143,7 +143,9 @@ return(
       </svg>  
 
       <div className='div-titulo-apresentacao' >
-      <p>123456789 ${widthDiv}</p>
+      <p>widthDiv --- {widthDiv}</p>
+      <p>widthDiv --- {percentY}</p>
+      <p>valDiv --- {valDiv}</p>
       <p>FERREIRA2</p>
       </div>
     </div>
