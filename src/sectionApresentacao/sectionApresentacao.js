@@ -43,7 +43,32 @@ function DivDpsFumaca() {
     top: 0;
   } `;
 
-  // window.addEventListener('scroll', onScroll);
+  
+  document.addEventListener("touchmove", ScrollStart, false);
+  document.addEventListener("scroll", Scroll, false);
+
+  function ScrollStart() {
+    Scroll()
+}
+
+function Scroll() {
+  const scrollY = window.scrollY;
+  const percentY = window.scrollY/window.innerHeight
+  console.log(percentY)
+
+  var count = 10;
+
+  if(percentY<6){
+    count =+ percentY*100;
+
+    if(count < 10)
+    count =10
+
+    setWidth((widthDiv) => {return 2*count + "vw"});
+    setHeight((heightDiv) => {return 2*count + "vw"});
+    setLeft((leftDiv) => {return (100-2*count)/2 + "vw" })
+  }
+}
 
   window.onscroll = function onScroll() {
     const scrollY = window.scrollY;
