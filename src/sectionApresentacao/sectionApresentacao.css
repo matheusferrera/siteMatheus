@@ -1,28 +1,111 @@
 .section-apresentacao{
-  background-color: rgb(0, 0, 0);
-  width: 100vw;
-  height: 100vh !important;
-  overflow-x: hidden;
-  border: 5px solid greenyellow;
+  background-color: black;
+  width: 100%;
+  margin: 0;
 }
+
+.clip-svg {
+  height: 0;
+  width: 0;
+}
+
+
+.div-antesFumaca{
+  /* border:solid 1px red; */
+  width: 100%;
+  background-color: rgb(0,0,0);
+  /* border: 1px solid red; */
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+}
+
+.div-antesFumaca .titulo{
+  font-size: 16vw;
+  line-height: 15vw;
+  font-family: 'blankaregular';
+  color: #D023FF;
+  margin-left: 3vh;
+}
+
+.div-antesFumaca .subTitulo{
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  font-family: 'avenue_xregular';
+  color: rgb(92, 92, 92);
+  margin-top: 4vh;
+  margin-left: 3vh;
+}
+
+
+.div-background-apresentacao{
+  position: relative;
+  border: solid 1px red;
+  width: 1px;
+  height: 1px;
+  opacity: 0.5;
+  bottom: 30vh;
+  right: 40vw;
+  scale: 1;
+}
+
+
+.div-antesFumaca p{
+  margin: 0;
+}
+
+
+
+
+
+
+
+/* 
+precisa aumentar o width e o left para o efeito de fumaça */
+/* .div-depoisFumaca {
+  display: block;
+  position: relative;
+  left: 45vw;
+  width: 10vw;
+
+  top: 90vh;
+  height: 10vh;
+
+  clip-path: url(#triangle-mask);
+  -webkit-clip-path: url(#triangle-mask);
+  background-color: red;
+}
+
+.div-depoisFumaca .div-titulo-apresentacao{
+  border: 1px solid white;
+  position: fixed;
+  width: 80vw;
+  left: 0;
+  top: 0;
+}
+ */
+
+
 
 
 
 .div-texto-apresentacao{
   color: white;
-  border: 1px solid red;
   position: relative;
-  top: 30%;
   width: 80%;
   margin-left: 6vw;
+  margin-top: 10%;
 }
 
 .div-texto-apresentacao p{
   color: white;
   margin: 0;
-  font-size: 5vh;
-  line-height: 5vh;
-  
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+  font-family: 'avenue_xregular';
+  color: rgb(92, 92, 92);
 }
 
 
@@ -31,16 +114,17 @@
 
 .div-titulo-apresentacao{
   color: white;
-  border: 1px solid red;
   position: relative;
-  width: 20%;
-  top: 20%;
+  margin-top: 10vh;
   margin-left: 6vw;
+ 
 }
 
 .div-titulo-apresentacao p{
   color: white;
   margin: 0;
-  font-size: 10vh;
-  line-height: 8.2vh;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  font-family: 'blankaregular';
+  color: #D023FF;
 }

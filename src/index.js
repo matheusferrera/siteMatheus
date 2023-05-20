@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './stylesheet.css'
+import './fonts/stylesheet.css'
 import SectionApresentacao from './sectionApresentacao/sectionApresentacao';
 import reportWebVitals from './reportWebVitals';
 
