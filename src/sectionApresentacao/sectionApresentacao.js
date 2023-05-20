@@ -44,13 +44,13 @@ function DivDpsFumaca() {
   } `;
 
   
-  document.addEventListener("touchmove", ScrollStart, false);
+  // document.addEventListener("touchmove", ScrollStart, false);
   document.addEventListener("scroll", Scroll, false);
 
-  function ScrollStart() {
-    console.log("comecou scroll")
-    Scroll()
-}
+//   function ScrollStart() {
+//     console.log("comecou scroll")
+//     Scroll()
+// }
 
 function Scroll() {
   const scrollY = window.scrollY;
