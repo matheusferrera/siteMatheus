@@ -6,7 +6,6 @@ import BackgroundApresentacao from '../images/backgroundApresentacao.js'
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
 
-import { Tween } from 'react-gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 
@@ -21,21 +20,9 @@ function sectionApresentacao() {
           
           <div style={{backgroundColor: 'grey', height: '300vh'}}><h1>Teste</h1></div>
 
-          <Tween
-              to={{
-                width: '200vw',
-                height: '200vw',
-                left: '-50vw',
-                scrollTrigger: {
-                  trigger: '.div-depoisFumaca',
-                  start: '-200px center',
-                  end: '10000px center',
-                  scrub: 0.5,
-                  markers: true,
-                },
-              }}duration={1} ease="back.out(1.5)"
-            >
-              <div className='div-depoisFumaca'>
+        
+            
+            <div className='div-depoisFumaca'>
                 <svg class="clip-svg">
                   <defs>
                     <clipPath id="triangle-mask" clipPathUnits="objectBoundingBox" transform="scale(1 1)">
@@ -59,9 +46,6 @@ function sectionApresentacao() {
                 <p>CUZINHO HOE? RSRS</p>
                 </div>
               </div>
-            </Tween>
-            
-            
 
           <div className='div-antesFumaca' >
      
