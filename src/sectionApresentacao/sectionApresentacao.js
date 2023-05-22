@@ -3,25 +3,56 @@ import './sectionApresentacao.css';
 
 import BackgroundApresentacao from '../images/backgroundApresentacao.js'
 
-import styled from 'styled-components';
-import { useState, useEffect } from "react";
+import React from "react";
+import { gsap } from "gsap";
 
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
+const { useLayoutEffect, useRef } = React;
 
 
 
-function sectionApresentacao() {
+function SectionApresentacao() {
 
+  const app = useRef();
   
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const vhTotal = window.innerHeight;
+
+    const ctx = gsap.context(() => {
+      // Target the two specific elements we have asigned the animate class
+      const animationAumenta = gsap.to('.div-depoisFumaca', {
+        width: '200%',
+        height: '400%',
+        left: '-100%',
+        scrollTrigger: {
+          trigger: ".triggerAumenta",
+          start: '10%',
+          end: '20%',
+          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+          markers: true,
+        }
+
+      });
+      
+      
+      gsap.set(".aumenta", {
+        backgroundColor: 'red'
+      });
+      
+    }, app);// <- Scope!
+    
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="section-apresentacao">
           
-          <div style={{backgroundColor: 'grey', height: '300vh'}}><h1>Teste</h1></div>
-
-        
-            
+          <div style={{backgroundColor: 'grey', height: '300vh'}}><h1>Teste</h1>
+            <div className="app" ref={app}>
+            {/* <div className='aumenta' data-animate='aumenta' style={{width: '10%', position: 'fixed', top: '40px'}}><h1>teste aumenta</h1></div> */}
             <div className='div-depoisFumaca'>
                 <svg class="clip-svg">
                   <defs>
@@ -31,21 +62,29 @@ function sectionApresentacao() {
                   </defs>
                 </svg>  
 
-                <div className='div-titulo-apresentacao' style={{backgroundColor: 'white'}}>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
-                <p>CUZINHO HOE? RSRS</p>
+                <div className='div-titulo-apresentacao' style={{backgroundColor: 'white', fontSize: '20'}}>
+                <a>CUZINHO HOJE?</a>
+                <a>CUZINHO HOJE?</a>
+                <a>CUZINHO HOJE?</a>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
+                <p>CUZINHO HOJE?</p>
                 </div>
-              </div>
+            </div>
+            </div>
+            
+            <div className='triggerAumenta'><a>trigger</a></div>
+          </div>
+
+        
+          
+           
 
           <div className='div-antesFumaca' >
      
@@ -76,4 +115,4 @@ function sectionApresentacao() {
   );
 }
 
-export default sectionApresentacao;
+export default SectionApresentacao;
