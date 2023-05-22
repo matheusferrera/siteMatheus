@@ -5,7 +5,7 @@ import BackgroundApresentacao from '../images/backgroundApresentacao.js'
 
 import React from "react";
 import { gsap } from "gsap";
-
+import { useState, useEffect } from "react";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const { useLayoutEffect, useRef } = React;
@@ -14,38 +14,69 @@ const { useLayoutEffect, useRef } = React;
 
 function SectionApresentacao() {
 
+  const [count, setCount] = useState(0);
   const app = useRef();
-  
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
 
-    const vhTotal = window.innerHeight;
-
-    const ctx = gsap.context(() => {
-      // Target the two specific elements we have asigned the animate class
-      const animationAumenta = gsap.to('.div-depoisFumaca', {
-        width: '200%',
-        height: '400%',
-        left: '-100%',
-        scrollTrigger: {
-          trigger: ".triggerAumenta",
-          start: '10%',
-          end: '20%',
-          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-          markers: true,
-        }
-
-      });
+  useEffect(() => {
+    setTimeout(() => {
+      console.log("Y -> " + window.scrollY)
       
-      
-      gsap.set(".aumenta", {
-        backgroundColor: 'red'
-      });
-      
-    }, app);// <- Scope!
+      if(window.scrollY>500){
+        const ctx = gsap.context(() => {
+          // Target the two specific elements we have asigned the animate class
+          const animationAumenta = gsap.to('.div-depoisFumaca', {
+            width: '200%',
+            height: '400%',
+            left: '-100%'
     
-    return () => ctx.revert();
-  }, []);
+          });
+          
+        }, app);// <- Scope!
+      }else{
+        const ctx = gsap.context(() => {
+          // Target the two specific elements we have asigned the animate class
+          const animationAumenta = gsap.to('.div-depoisFumaca', {
+            width: '30%',
+            height: '30%',
+            left: '-10%'
+    
+          });
+          
+        }, app);// <- Scope!
+      }
+      
+
+      setCount((count) => count + 1);
+      
+    }, 1000);
+  });
+
+
+  // 
+  
+  // useLayoutEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+
+  //   const vhTotal = window.innerHeight;
+
+  //   const ctx = gsap.context(() => {
+  //     // Target the two specific elements we have asigned the animate class
+  //     const animationAumenta = gsap.to('.div-depoisFumaca', {
+  //       width: '200%',
+  //       height: '400%',
+  //       left: '-100%'
+
+  //     });
+      
+      
+  //     gsap.set(".aumenta", {
+  //       backgroundColor: 'red'
+  //     });
+      
+  //   }, app);// <- Scope!
+    
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <div className="section-apresentacao">
@@ -63,18 +94,18 @@ function SectionApresentacao() {
                 </svg>  
 
                 <div className='div-titulo-apresentacao' style={{backgroundColor: 'white', fontSize: '20'}}>
-                <a>CUZINHO HOJE?</a>
-                <a>CUZINHO HOJE?</a>
-                <a>CUZINHO HOJE?</a>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
-                <p>CUZINHO HOJE?</p>
+                <a>CUZINHO HOJE? RSRS</a>
+                <a>CUZINHO HOJE? RSRS</a>
+                <a>CUZINHO HOJE? RSRS</a>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
+                <p>CUZINHO HOJE? RSRS</p>
                 </div>
             </div>
             </div>
