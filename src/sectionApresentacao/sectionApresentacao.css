@@ -62,30 +62,31 @@
 
 
 
-/* 
-precisa aumentar o width e o left para o efeito de fumaça */
-/* .div-depoisFumaca {
-  display: block;
-  position: relative;
-  left: 45vw;
-  width: 10vw;
+ 
+  /* 
+  precisa aumentar o width e o left para o efeito de fumaça */
+  .div-depoisFumaca {
+    display: block;
+    position: fixed; 
+    bottom: 0;
+    z-index: 3;
 
-  top: 90vh;
-  height: 10vh;
+    width: 20vw;
+    height: 20vh;
+    left: 0;
 
-  clip-path: url(#triangle-mask);
-  -webkit-clip-path: url(#triangle-mask);
-  background-color: red;
-}
-
-.div-depoisFumaca .div-titulo-apresentacao{
-  border: 1px solid white;
-  position: fixed;
-  width: 80vw;
-  left: 0;
-  top: 0;
-}
- */
+    clip-path: url(#triangle-mask);
+    -webkit-clip-path: url(#triangle-mask);
+    background-color: red;
+  }
+  
+  .div-depoisFumaca .div-titulo-apresentacao{
+    border: 1px solid white;
+    position: fixed;
+    width: 80vw;
+    left: 0;
+    top: 0;
+  }
 
 
 
